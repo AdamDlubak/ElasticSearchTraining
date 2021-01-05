@@ -16,4 +16,3 @@ namespace ElasticSearchTraining.Services
         Task SaveBulkAsync(Product[] products);
     }
 }
-}

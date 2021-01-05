@@ -99,7 +99,7 @@ namespace ElasticSearchTraining.Services
         public async Task SaveBulkAsync(Product[] products)
         {
             _cache.AddRange(products);
-            var result = await _elasticClient.BulkAsync(b => b.Index("products").IndexMany(products));
+            var result = await _elasticClient.BulkAsync(b => b.Index("my-awesome-elasticsearch-cluster").IndexMany(products));
             if (result.Errors)
             {
                 // the response can be inspected for errors
@@ -111,3 +111,4 @@ namespace ElasticSearchTraining.Services
             }
         }
     }
+}
